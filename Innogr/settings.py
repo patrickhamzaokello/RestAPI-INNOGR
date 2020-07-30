@@ -31,7 +31,7 @@ SECRET_KEY = '09af4cad722470c691212159ef1f1709e2216dc0d9816125'
 # DEBUG_VALUE="True"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['innograpitest.herokuapp.com']
 
