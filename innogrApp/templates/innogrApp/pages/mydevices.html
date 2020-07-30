@@ -1,0 +1,320 @@
+{% extends 'innogrApp/base.html' %}
+
+{% load static %}
+
+
+{% block pagebody %}
+
+<div class="page-header">
+  <h3 class="page-title">
+    My Devices
+  </h3>
+</div>
+<div class="row">
+  <div class="col-md-6 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">DHT Sensor</h4>
+        <p class="card-description">Temperature & Humidity Measurement</p>
+        <ul class="nav nav-tabs" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active show" id="home-tab" data-toggle="tab" href="#home-1" role="tab"
+              aria-controls="home-1" aria-selected="true">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile-1" role="tab"
+              aria-controls="profile-1" aria-selected="false">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact-1" role="tab"
+              aria-controls="contact-1" aria-selected="false">Help</a>
+          </li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane fade active show" id="home-1" role="tabpanel" aria-labelledby="home-tab">
+            <div class="card">
+              <div class="card-body">
+                <div class="chartjs-size-monitor"
+                  style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;">
+                  <div class="chartjs-size-monitor-expand"
+                    style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                    <div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div>
+                  </div>
+                  <div class="chartjs-size-monitor-shrink"
+                    style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                    <div style="position:absolute;width:200%;height:200%;left:0; top:0"></div>
+                  </div>
+                </div>
+                <canvas id="sales-chart" width="805" height="401" class="chartjs-render-monitor"
+                  style="display: block; width: 307px; height: 153px;"></canvas>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="profile-1" role="tabpanel" aria-labelledby="profile-tab">
+            <div class="media">
+              <img class="mr-3 w-25 rounded" src="../images/sensors/dhtsensor.jpg" alt="sample image">
+              <div class="media-body">
+                <h4 class="mt-0">DHT Module</h4>
+                <p>
+                  The DHT sensors are made of two parts, a capacitive humidity sensor and a thermistor. There
+                  is also a very basic chip inside that does some analog to digital conversion and spits out a
+                  digital signal with the temperature and humidity. The digital signal is fairly easy to read
+                  using any microcontroller.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="contact-1" role="tabpanel" aria-labelledby="contact-tab">
+            <h4>Contact us </h4>
+            <p>
+              Feel free to contact us if you have any questions!
+            </p>
+            <p>
+              <i class="fa fa-phone text-info"></i>
+              +123456789
+            </p>
+            <p>
+              <i class="far fa-envelope-open text-success"></i>
+              contactus@example.com
+            </p>
+            <div class="card">
+              <div class="card-body">
+                <div class="mt-4">
+                  <div class="accordion accordion-bordered" id="accordion-2" role="tablist">
+                    <div class="card">
+                      <div class="card-header" role="tab" id="heading-4">
+                        <h6 class="mb-0">
+                          <a data-toggle="collapse" href="#collapse-4" aria-expanded="false"
+                            aria-controls="collapse-4">
+                            How can I pay for an order I placed?
+                          </a>
+                        </h6>
+                      </div>
+                      <div id="collapse-4" class="collapse" role="tabpanel" aria-labelledby="heading-4"
+                        data-parent="#accordion-2">
+                        <div class="card-body">
+                          You can pay for the product you have purchased using credit cards, debit cards, or
+                          via online banking. We also provide cash-on-delivery services for most of our
+                          products. You can also use your account wallet for payment.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Water Sensor</h4>
+        <p class="card-description">Water Level Measurement</p>
+        <ul class="nav nav-tabs" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active show" id="home-tab" data-toggle="tab" href="#home-2" role="tab"
+              aria-controls="home-2" aria-selected="true">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile-2" role="tab"
+              aria-controls="profile-2" aria-selected="false">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact-2" role="tab"
+              aria-controls="contact-2" aria-selected="false">Help</a>
+          </li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane fade active show" id="home-2" role="tabpanel" aria-labelledby="home-tab">
+            <div class="card">
+              <div class="card-body">
+                <div class="chartjs-size-monitor"
+                  style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;">
+                  <div class="chartjs-size-monitor-expand"
+                    style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                    <div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div>
+                  </div>
+                  <div class="chartjs-size-monitor-shrink"
+                    style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                    <div style="position:absolute;width:200%;height:200%;left:0; top:0"></div>
+                  </div>
+                </div>
+
+                <canvas id="orders-chart" width="805" height="401" class="chartjs-render-monitor"
+                  style="display: block; height: 153px; width: 307px;"></canvas>
+                <div id="orders-chart-legend" class="orders-chart-legend">
+                  <ul class="legend0">
+                    <li><span class="legend-label" style="background-color:#09ab0f"></span>Delivered</li>
+                    <li><span class="legend-label" style="background-color:#d1cede"></span>Estimated</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="profile-2" role="tabpanel" aria-labelledby="profile-tab">
+            <div class="media">
+              <img class="mr-3 w-25 rounded" src="../images/sensors/watersensor.jpg" alt="sample image">
+              <div class="media-body">
+                <h4 class="mt-0">Water Sensor</h4>
+                <p>
+                  A water sensor is a device used in the detection of the water level for various
+                  applications. Water sensors can come in several variations that include ultrasonic sensors,
+                  pressure transducers, bubblers, and float sensors.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="contact-2" role="tabpanel" aria-labelledby="contact-tab">
+            <h4>Contact us </h4>
+            <p>
+              Feel free to contact us if you have any questions!
+            </p>
+            <p>
+              <i class="fa fa-phone text-info"></i>
+              +123456789
+            </p>
+            <p>
+              <i class="far fa-envelope-open text-success"></i>
+              contactus@example.com
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">DHT Sensor</h4>
+        <p class="card-description">Temperature & Humidity Measurement</p>
+        <ul class="nav nav-tabs" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active show" id="home-tab" data-toggle="tab" href="#home-3" role="tab"
+              aria-controls="home-3" aria-selected="true">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile-3" role="tab"
+              aria-controls="profile-3" aria-selected="false">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact-3" role="tab"
+              aria-controls="contact-3" aria-selected="false">Help</a>
+          </li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane fade active show" id="home-3" role="tabpanel" aria-labelledby="home-tab">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="card-title">Donut chart</h4>
+                <div id="c3-donut-chart"></div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="profile-3" role="tabpanel" aria-labelledby="profile-tab">
+            <div class="media">
+              <img class="mr-3 w-25 rounded" src="../images/faces/face12.jpg" alt="sample image">
+              <div class="media-body">
+                <h4 class="mt-0">DHT Module</h4>
+                <p>
+                  Fail most room even gone her end like. Comparison dissimilar unpleasant six compliment two
+                  unpleasing
+                  any add. Ashamed my company thought wishing colonel it prevent he in. Pretended residence
+                  are something
+                  far engrossed old off. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
+                  nulla eveniet repellat et a odit eos iusto deleniti blanditiis reprehenderit eius expedita
+                  aliquam sed incidunt illo asperiores, neque distinctio quo.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="contact-3" role="tabpanel" aria-labelledby="contact-tab">
+            <h4>Contact us </h4>
+            <p>
+              Feel free to contact us if you have any questions!
+            </p>
+            <p>
+              <i class="fa fa-phone text-info"></i>
+              +123456789
+            </p>
+            <p>
+              <i class="far fa-envelope-open text-success"></i>
+              contactus@example.com
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Water Sensor</h4>
+        <p class="card-description">Water Level Measurement</p>
+        <ul class="nav nav-tabs" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active show" id="home-tab" data-toggle="tab" href="#home-4" role="tab"
+              aria-controls="home-4" aria-selected="true">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile-4" role="tab"
+              aria-controls="profile-4" aria-selected="false">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact-4" role="tab"
+              aria-controls="contact-4" aria-selected="false">Help</a>
+          </li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane fade active show" id="home-4" role="tabpanel" aria-labelledby="home-tab">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="card-title">Pie chart</h4>
+                <div id="c3-pie-chart"></div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="profile-4" role="tabpanel" aria-labelledby="profile-tab">
+            <div class="media">
+              <img class="mr-3 w-25 rounded" src="../images/faces/face12.jpg" alt="sample image">
+              <div class="media-body">
+                <h4 class="mt-0">Water Sensor</h4>
+                <p>
+                  Fail most room even gone her end like. Comparison dissimilar unpleasant six compliment two
+                  unpleasing
+                  any add. Ashamed my company thought wishing colonel it prevent he in. Pretended residence
+                  are something
+                  far engrossed old off. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet
+                  assumenda ipsa quod optio molestias consequatur quibusdam, ratione tenetur commodi dicta,
+                  sapiente magni corrupti deleniti accusantium minima, fuga ipsam a alias?
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="contact-4" role="tabpanel" aria-labelledby="contact-tab">
+            <h4>Contact us </h4>
+            <p>
+              Feel free to contact us if you have any questions!
+            </p>
+            <p>
+              <i class="fa fa-phone text-info"></i>
+              +123456789
+            </p>
+            <p>
+              <i class="far fa-envelope-open text-success"></i>
+              contactus@example.com
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+{% endblock pagebody %}

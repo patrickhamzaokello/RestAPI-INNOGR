@@ -1,0 +1,286 @@
+{% extends 'innogrApp/base.html' %}
+
+{% load static %}
+
+{% block pagebody %}
+<div class="page-header">
+  <h3 class="page-title">
+    Dashboard
+  </h3>
+</div>
+<div class="row grid-margin">
+  <div class="col-12">
+    <div class="card card-statistics">
+      <div class="card-body">
+        <div class="d-flex flex-column flex-md-row align-items-center justify-content-between">
+          <div class="statistics-item">
+            <p>
+              <i class="icon-sm fa fa-user mr-2"></i>
+              Temp
+            </p>
+            <h2>37&#x2103;</h2>
+            <label class="badge badge-outline-success badge-pill">2.7% increase</label>
+          </div>
+          <div class="statistics-item">
+            <p>
+              <i class="icon-sm fas fa-hourglass-half mr-2"></i>
+              Humidity
+            </p>
+            <h2>87%</h2>
+            <label class="badge badge-outline-danger badge-pill">30% decrease</label>
+          </div>
+          <div class="statistics-item">
+            <p>
+              <i class="icon-sm fas fa-cloud-download-alt mr-2"></i>
+              Water Level
+            </p>
+            <h2>35%</h2>
+            <label class="badge badge-outline-success badge-pill">12% increase</label>
+          </div>
+          <div class="statistics-item">
+            <p>
+              <i class="icon-sm fas fa-check-circle mr-2"></i>
+              AV PH
+            </p>
+            <h2>3.4pH</h2>
+            <label class="badge badge-outline-success badge-pill">57% increase</label>
+          </div>
+          <div class="statistics-item">
+            <p>
+              <i class="icon-sm fas fa-chart-line mr-2"></i>
+              Light Int
+            </p>
+            <h2>200Lux</h2>
+            <label class="badge badge-outline-success badge-pill">10% increase</label>
+          </div>
+          <div class="statistics-item">
+            <p>
+              <i class="icon-sm fas fa-circle-notch mr-2"></i>
+              Soil
+            </p>
+            <h2>45%</h2>
+            <label class="badge badge-outline-danger badge-pill">16% decrease</label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">
+          <i class="fas fa-gift"></i>
+          Water Level and Soil Water Retention Variation
+        </h4>
+        <canvas id="orders-chart"></canvas>
+        <div id="orders-chart-legend" class="orders-chart-legend"></div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">
+          <i class="fas fa-chart-line"></i>
+          Temperature and Humidity Variations
+        </h4>
+        <h2 class="mb-5">42<span class="text-muted h4 font-weight-normal">&#x2103; High</span></h2>
+        <canvas id="sales-chart"></canvas>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-4 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body d-flex flex-column">
+        <h4 class="card-title">
+          <i class="fas fa-chart-pie"></i>
+          Market Value
+        </h4>
+        <div class="flex-grow-1 d-flex flex-column justify-content-between">
+          <canvas id="sales-status-chart" class="mt-3"></canvas>
+          <div class="pt-4">
+            <div id="sales-status-chart-legend" class="sales-status-chart-legend"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">
+          <i class="icon-sm fas fa-cloud-download-alt mr-2"></i>
+
+          Sensor Updates
+        </h4>
+        <ul class="solid-bullet-list">
+          <li>
+            <h6>Temperature Sensor</h6>
+            <p>Lorem Ipsum is simply dummy text of the printing </p>
+            <p class="text-muted">
+              <i class="far fa-clock"></i>
+              2 mins ago.
+            </p>
+          </li>
+          <li>
+            <h6>Water Level</h6>
+            <p>Lorem Ipsum is simply dummy text of the printing </p>
+            <p class="text-muted">
+              <i class="far fa-clock"></i>
+              20 mins ago.
+            </p>
+          </li>
+          <li>
+            <h6>Humidity Sensor</h6>
+            <p>Lorem Ipsum is simply dummy text of the printing </p>
+            <p class="text-muted">
+              <i class="far fa-clock"></i>
+              30 mins ago.
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="col-md-4 grid-margin stretch-card">
+    <div class="card text-center">
+
+      <div class="card-body">
+        <h4 class="card-title" style="text-align: left;">
+          <i class="fas fa-tachometer-alt"></i>
+          Recommended User
+        </h4>
+        {% for user in all_users %}
+        <img src="{{ user.profile.image.url }}" class="img-lg rounded-circle mb-2" alt="profile image">
+        <h4>{{user.first_name}}</h4>
+        <p class="text-muted">{{user.profile.firstSkill}} / {{user.profile.secondSkill}}</p>
+        <p class="mt-4 card-text">
+          {{user.profile.description}}
+        </p>
+        <a href="{% url 'user-posts' user.username %}" class="followbtn btn btn-sm mt-3 mb-4">Follow</a>
+
+        <div class="py-4 border-top">
+          <p class="clearfix">
+            <span class="float-left">
+              Status
+            </span>
+            <span class="float-right text-muted">
+              Active
+            </span>
+          </p>
+          <p class="clearfix">
+            <span class="float-left">
+              Phone
+            </span>
+            <span class="float-right text-muted">
+              {{ user.profile.phone }}
+            </span>
+          </p>
+          <p class="clearfix">
+            <span class="float-left">
+              Mail
+            </span>
+            <span class="float-right text-muted">
+              {{user.email}}
+            </span>
+          </p>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-8 h-100">
+      {% for post in posts %}
+
+      <div class="card rounded mb-2">
+        <div class="card-body p-3">
+          <div class="media">
+            <img src="{{ post.author.profile.image.url }}" alt="image" class="img-pk mr-3 mb-3 rounded-circle">
+            <div class="media-body">
+              <h6 class="mb-1"><a href="{% url 'user-posts' post.author.username %}">{{post.author}}</a></h6>
+              <p>{{post.date_posted|date:"F d, Y"}}</p>
+            </div>
+          </div>
+          <a class="d-block h5 mb-1" href="{% url 'post-detail' post.id %}">{{post.title}}</a>
+
+          <p class="mb-0 text-muted">
+            {{post.summary}}
+          </p>
+          <div class="post-button">
+            <p class="small text-muted mt-2 mb-0">
+              <span class="">
+                <i onClick="document.getElementById('likebutton').submit()" class="fa fa-heart mr-1"></i>{{post.likes}}
+              </span>
+              <span class="ml-2">
+                <i onClick="document.getElementById('dislikebutton').submit()"
+                  class="fa fa-thumbs-down mr-1"></i>{{post.dislikes}}
+              </span>
+              <span class="ml-2 postmore">
+                <a href="{% url 'post-detail' post.id %}" class="fa fa-ellipsis-h"></a>
+              </span>
+            </p>
+          </div>
+
+
+        </div>
+
+      </div>
+
+      {% endfor %}
+
+
+    {% if is_paginated %}
+    <nav>
+      <ul class="pagination separated pagination-danger">
+        {% if page_obj.has_previous %}
+        <li class="page-item"><a class="page-link" href="?page=1">First</a></li>
+        <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">Previous</a></li>
+        {% endif %}
+
+        {% for num in page_obj.paginator.page_range %}
+        {% if page_obj.number == num %}
+        <li class="page-item active"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
+
+        {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+        <li class="page-item"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
+        {% endif %}
+        {% endfor %}
+
+        {% if page_obj.has_next %}
+
+        <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a></li>
+        <li class="page-item"><a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">Last</a></li>
+        {% endif %}
+
+      </ul>
+    </nav>
+    {% endif %}
+
+
+
+  </div>
+  <div class="col-md-4 h-100">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">
+          <i class="fas fa-calendar-alt"></i>
+          Calendar
+        </h4>
+        <div id="inline-datepicker-example" class="datepicker"><div class="datepicker datepicker-inline"><div class="datepicker-days" style=""><table class="table-condensed"><thead><tr><th colspan="7" class="datepicker-title" style="display: none;"></th></tr><tr><th class="prev">«</th><th colspan="5" class="datepicker-switch">July 2020</th><th class="next">»</th></tr><tr><th class="dow">Su</th><th class="dow">Mo</th><th class="dow">Tu</th><th class="dow">We</th><th class="dow">Th</th><th class="dow">Fr</th><th class="dow">Sa</th></tr></thead><tbody><tr><td class="old day" data-date="1593302400000">28</td><td class="old day" data-date="1593388800000">29</td><td class="old day" data-date="1593475200000">30</td><td class="day" data-date="1593561600000">1</td><td class="day" data-date="1593648000000">2</td><td class="day" data-date="1593734400000">3</td><td class="day" data-date="1593820800000">4</td></tr><tr><td class="day" data-date="1593907200000">5</td><td class="day" data-date="1593993600000">6</td><td class="day" data-date="1594080000000">7</td><td class="day" data-date="1594166400000">8</td><td class="day" data-date="1594252800000">9</td><td class="day" data-date="1594339200000">10</td><td class="day" data-date="1594425600000">11</td></tr><tr><td class="day" data-date="1594512000000">12</td><td class="day" data-date="1594598400000">13</td><td class="day" data-date="1594684800000">14</td><td class="day" data-date="1594771200000">15</td><td class="day" data-date="1594857600000">16</td><td class="day" data-date="1594944000000">17</td><td class="day" data-date="1595030400000">18</td></tr><tr><td class="today day" data-date="1595116800000">19</td><td class="day" data-date="1595203200000">20</td><td class="day" data-date="1595289600000">21</td><td class="day" data-date="1595376000000">22</td><td class="day" data-date="1595462400000">23</td><td class="day" data-date="1595548800000">24</td><td class="day" data-date="1595635200000">25</td></tr><tr><td class="day" data-date="1595721600000">26</td><td class="day" data-date="1595808000000">27</td><td class="day" data-date="1595894400000">28</td><td class="day" data-date="1595980800000">29</td><td class="day" data-date="1596067200000">30</td><td class="day" data-date="1596153600000">31</td><td class="new day" data-date="1596240000000">1</td></tr><tr><td class="new day" data-date="1596326400000">2</td><td class="new day" data-date="1596412800000">3</td><td class="new day" data-date="1596499200000">4</td><td class="new day" data-date="1596585600000">5</td><td class="new day" data-date="1596672000000">6</td><td class="new day" data-date="1596758400000">7</td><td class="new day" data-date="1596844800000">8</td></tr></tbody><tfoot><tr><th colspan="7" class="today" style="display: none;">Today</th></tr><tr><th colspan="7" class="clear" style="display: none;">Clear</th></tr></tfoot></table></div><div class="datepicker-months" style="display: none;"><table class="table-condensed"><thead><tr><th colspan="7" class="datepicker-title" style="display: none;"></th></tr><tr><th class="prev">«</th><th colspan="5" class="datepicker-switch">2020</th><th class="next">»</th></tr></thead><tbody><tr><td colspan="7"><span class="month">Jan</span><span class="month">Feb</span><span class="month">Mar</span><span class="month">Apr</span><span class="month">May</span><span class="month">Jun</span><span class="month focused">Jul</span><span class="month">Aug</span><span class="month">Sep</span><span class="month">Oct</span><span class="month">Nov</span><span class="month">Dec</span></td></tr></tbody><tfoot><tr><th colspan="7" class="today" style="display: none;">Today</th></tr><tr><th colspan="7" class="clear" style="display: none;">Clear</th></tr></tfoot></table></div><div class="datepicker-years" style="display: none;"><table class="table-condensed"><thead><tr><th colspan="7" class="datepicker-title" style="display: none;"></th></tr><tr><th class="prev">«</th><th colspan="5" class="datepicker-switch">2020-2029</th><th class="next">»</th></tr></thead><tbody><tr><td colspan="7"><span class="year old">2019</span><span class="year focused">2020</span><span class="year">2021</span><span class="year">2022</span><span class="year">2023</span><span class="year">2024</span><span class="year">2025</span><span class="year">2026</span><span class="year">2027</span><span class="year">2028</span><span class="year">2029</span><span class="year new">2030</span></td></tr></tbody><tfoot><tr><th colspan="7" class="today" style="display: none;">Today</th></tr><tr><th colspan="7" class="clear" style="display: none;">Clear</th></tr></tfoot></table></div><div class="datepicker-decades" style="display: none;"><table class="table-condensed"><thead><tr><th colspan="7" class="datepicker-title" style="display: none;"></th></tr><tr><th class="prev">«</th><th colspan="5" class="datepicker-switch">2000-2090</th><th class="next">»</th></tr></thead><tbody><tr><td colspan="7"><span class="decade old">1990</span><span class="decade">2000</span><span class="decade">2010</span><span class="decade focused">2020</span><span class="decade">2030</span><span class="decade">2040</span><span class="decade">2050</span><span class="decade">2060</span><span class="decade">2070</span><span class="decade">2080</span><span class="decade">2090</span><span class="decade new">2100</span></td></tr></tbody><tfoot><tr><th colspan="7" class="today" style="display: none;">Today</th></tr><tr><th colspan="7" class="clear" style="display: none;">Clear</th></tr></tfoot></table></div><div class="datepicker-centuries" style="display: none;"><table class="table-condensed"><thead><tr><th colspan="7" class="datepicker-title" style="display: none;"></th></tr><tr><th class="prev">«</th><th colspan="5" class="datepicker-switch">2000-2900</th><th class="next">»</th></tr></thead><tbody><tr><td colspan="7"><span class="century old">1900</span><span class="century focused">2000</span><span class="century">2100</span><span class="century">2200</span><span class="century">2300</span><span class="century">2400</span><span class="century">2500</span><span class="century">2600</span><span class="century">2700</span><span class="century">2800</span><span class="century">2900</span><span class="century new">3000</span></td></tr></tbody><tfoot><tr><th colspan="7" class="today" style="display: none;">Today</th></tr><tr><th colspan="7" class="clear" style="display: none;">Clear</th></tr></tfoot></table></div></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% endblock pagebody %}

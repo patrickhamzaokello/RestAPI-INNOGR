@@ -1,0 +1,137 @@
+[33mcommit d16a71c065def215105187b4b3efb590d1157731[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: Pkasemer <pkasemer@gmail.com>
+Date:   Sun Jul 12 18:02:30 2020 +0300
+
+    replaced tages for users in overview.html
+
+[33mcommit 6d62affc340c21c193e6c4ad32c8481c85e1ea38[m
+Author: Pkasemer <pkasemer@gmail.com>
+Date:   Sun Jul 12 17:52:30 2020 +0300
+
+    fixed user skills and user_post page
+
+[33mcommit 1ba1d3f53eb67df8937f37b24cf4279d94ac2ab8[m
+Author: Pkasemer <pkasemer@gmail.com>
+Date:   Sun Jul 12 01:10:58 2020 +0300
+
+    fixed css for profile view
+
+[33mcommit 3b416c7148be9efc86ce3f85c2b7c159b4fc2737[m
+Author: Pkasemer <pkasemer@gmail.com>
+Date:   Sun Jul 12 00:58:10 2020 +0300
+
+    fixed register and login issue
+
+[33mcommit 01e0abef2747671d0b12807877926d4d6dfed854[m
+Author: Pkasemer <pkasemer@gmail.com>
+Date:   Sat Jul 11 04:47:33 2020 +0300
+
+    post create, update and delete done
+
+[33mcommit edbc0133617a8cdd9813f7167bd9fd9dbc9849f5[m
+Author: Pkasemer <pkasemer@gmail.com>
+Date:   Sat Jul 11 02:37:28 2020 +0300
+
+    finished photo rezie
+
+[33mcommit d75d0dd8fa5a1a547e22d772d7088edc95fc00e5[m
+Author: Pkasemer <pkasemer@gmail.com>
+Date:   Sat Jul 11 02:13:20 2020 +0300
+
+    added date ordering
+
+[33mcommit 352d525d26aba71551f0340d99b6204a159d6023[m
+Author: Pkasemer <pkasemer@gmail.com>
+Date:   Sat Jul 11 01:59:19 2020 +0300
+
+    profile settings done
+
+[33mcommit 2b70922222b4845c24f0747246704a1565c80ee7[m
+Author: Pkasemer <pkasemer@gmail.com>
+Date:   Fri Jul 10 21:35:55 2020 +0300
+
+    fixed profile images
+
+[33mcommit 121f15a9ec115d2865934c3e1a8c81fa20e03fdd[m
+Author: Pkasemer <pkasemer@gmail.com>
+Date:   Fri Jul 10 17:25:54 2020 +0300
+
+    fixed media url
+
+[33mcommit 936902a0015bf2c69697d7218aa703dca53c113d[m
+Author: Pkasemer <pkasemer@gmail.com>
+Date:   Fri Jul 10 17:21:07 2020 +0300
+
+    starting profile pics
+
+[33mcommit 09d6f6d620a4ecaee4bfbc4d6438478019d434a5[m
+Author: Pkasemer <pkasemer@gmail.com>
+Date:   Fri Jul 10 15:05:19 2020 +0300
+
+    user registration start
+
+[33mcommit aa5b8d68f9d10e5cdba3ba15d1cf7b9b0681dfd0[m
+Author: Pkasemer <pkasemer@gmail.com>
+Date:   Fri Jul 10 12:15:20 2020 +0300
+
+    Added users app
+
+[33mcommit 105db26d070efca8ccd655f5b7fe6a0e7a5a2906[m
+Author: Pkasemer <pkasemer@gmail.com>
+Date:   Fri Jul 10 01:36:51 2020 +0300
+
+    added database
+
+[33mcommit ac0a42cd178febfbeac3b5067be7ad38a2a47251[m
+Author: Pkasemer <pkasemer@gmail.com>
+Date:   Fri Jul 10 01:16:46 2020 +0300
+
+    working okya
+
+[33mcommit 022b9707ee2a19e25bc0686918cdb49a16221e29[m
+Author: Pkasemer <pkasemer@gmail.com>
+Date:   Thu Jul 9 01:24:29 2020 +0300
+
+    fixed active link for dashboard
+
+[33mcommit 5cf28258d2fc09354b887c5b3e8a1d0cc8829811[m
+Author: Pkasemer <pkasemer@gmail.com>
+Date:   Wed Jul 8 18:32:51 2020 +0300
+
+    django conversion complete
+
+[33mcommit ea87abeba993edaffa680ca3a678a6a566ae006b[m
+Author: Hafise <pkasemer@gmail.com>
+Date:   Thu Jul 2 10:23:29 2020 +0300
+
+    home linkeds fixed
+
+[33mcommit f43126bc916eda70ef0e6dfeabebc940b0d92e43[m
+Author: Hafise <pkasemer@gmail.com>
+Date:   Thu Jul 2 08:50:56 2020 +0300
+
+    based editted
+
+[33mcommit 80ec8076e4e7d7b0c70c6a4707603e3b57f24294[m
+Author: Hafise <pkasemer@gmail.com>
+Date:   Thu Jul 2 08:26:02 2020 +0300
+
+    editing continue
+
+[33mcommit 0f6fe2145df8c0ebc2afa077bc4535153cc2e164[m
+Author: Hafise <pkasemer@gmail.com>
+Date:   Thu Jul 2 07:49:45 2020 +0300
+
+    editing links
+
+[33mcommit 0d76c1ce0de67e3da5622bf94d69722ff050e952[m
+Author: Hafise <pkasemer@gmail.com>
+Date:   Thu Jul 2 07:28:28 2020 +0300
+
+    added dashboard template
+
+[33mcommit 3acf02345b76d3b5b2385e4305c63d4b683116e6[m
+Author: Hafise <pkasemer@gmail.com>
+Date:   Thu Jul 2 07:15:21 2020 +0300
+
+    firts commit
