@@ -21,6 +21,10 @@ from django.urls import include, path
 from rest_framework import routers
 from users import views as user_views
 
+#only when debug is false
+from django.conf.urls import url
+from django.views.static import serve
+
 # rests api routes
 router = routers.DefaultRouter()
 router.register(r'user', user_views.ProfileViewSet)
@@ -33,6 +37,10 @@ urlpatterns = [
     path('logout/', auth_views.LogoutView.as_view(template_name='users/logout.html'), name='logout'),
     path('search/', user_views.SearchView, name='search'),
     path('', include('innogrApp.urls')),
+    
+    #server media and static files
+    url(r'^media/(?P<path>.*)$', serve,{'document_root': settings.MEDIA_ROOT}),
+    url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
     
     # restapi url
     path('userapi', include(router.urls)),
